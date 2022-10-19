@@ -8,17 +8,23 @@ public class Calculator {
     protected String operation;
 
     double getResult(int num1, int num2, String operation) {
-        if ("-".equals(operation)) {
-            return num1 - num2;
-        } else if ("*".equals(operation)) {
-            return num1 * num2;
-        } else if ("+".equals(operation)) {
-            return num1 + num2;
-        } else if ("/".equals(operation)) {
-            return num1 / num2;
-        } else {
-            System.out.println("Операция не найдена");
-            return 0;
+        switch (operation){
+            case "+" -> {
+                return num1 + num2;
+            }
+            case "-" -> {
+                return num1 - num2;
+            }
+            case "/" -> {
+                return num1 / num2;
+            }
+            case "*" -> {
+                return num1 * num2;
+            }
+            default -> {
+                System.out.println("Операция не найдена");
+                return  0;
+            }
         }
     }
 
